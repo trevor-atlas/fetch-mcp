@@ -1,8 +1,8 @@
-import { z } from "zod";
+import { z } from 'zod';
 
-export const RequestPayloadSchema = z.object({
+export const MCPRequestSchema = z.object({
   url: z.string().url(),
   headers: z.record(z.string()).optional(),
 });
 
-export type RequestPayload = z.infer<typeof RequestPayloadSchema>;
+export type MCPRequest = z.infer<typeof MCPRequestSchema>;

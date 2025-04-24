@@ -43,20 +43,23 @@ This server does not provide any persistent resources. It's designed to fetch an
 ## Getting started
 
 1. Clone the repository
-2. Install dependencies: `npm install`
-3. Build the server: `npm run build`
+2. Install dependencies: `bun install`
+3. Build the server: `bun run build`
+4. This will output a standalone executable at ./build/fetch-mcp
+
+You can copy the executable wherever you desire and invoke it
 
 ### Usage
 
 To use the server, you can run it directly:
 
 ```bash
-npm start
+bun run start
 ```
 
 This will start the Fetch MCP Server running on stdio.
 
-### Usage with Desktop App
+### Usage with Claude Desktop App, Cursor, Windsurf etc
 
 To integrate this server with a desktop app, add the following to your app's server configuration:
 
@@ -64,10 +67,7 @@ To integrate this server with a desktop app, add the following to your app's ser
 {
   "mcpServers": {
     "fetch": {
-      "command": "node",
-      "args": [
-        "{ABSOLUTE PATH TO FILE HERE}/dist/index.js"
-      ]
+      "command": "{ABSOLUTE PATH TO FILE HERE}/fetch-mcp",
     }
   }
 }
@@ -79,12 +79,12 @@ To integrate this server with a desktop app, add the following to your app's ser
 - Supports custom headers for requests
 - Provides content in multiple formats: HTML, JSON, plain text, and Markdown
 - Uses JSDOM for HTML parsing and text extraction
-- Uses TurndownService for HTML to Markdown conversion
+- Uses Turndown for HTML to Markdown conversion
 
 ## Development
 
-- Run `npm run dev` to start the TypeScript compiler in watch mode
-- Use `npm test` to run the test suite
+- Run `bun run dev` to start the TypeScript compiler in watch mode
+- Use `bun test` to run the test suite
 
 ## License
 
